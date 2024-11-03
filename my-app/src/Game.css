@@ -4,6 +4,36 @@
 	align-items: center;
 	margin-top: 200px;
 }
+.info {
+	width: 300px;
+	height: 100px;
+	color: blue;
+	font-size: 36px;
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.rest-cell {
+	width: 300px;
+	height: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50px;
+	/* background-color: burlywood; */
+	border-style: hidden;
+
+}
+.rest {
+	color: blue;
+	font-size: 25px;
+	font-weight: bold;
+	border-radius: 15px;
+	background-color: burlywood;
+	border-style: hidden;
+	padding: 10px;
+}
 .board {
 	display: grid;
 	grid-template-columns: repeat(3, 100px);
