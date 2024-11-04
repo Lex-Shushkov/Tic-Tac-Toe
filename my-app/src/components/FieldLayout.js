@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export const FieldLayout = ({ field, onCellClick }) => {
 	return (
 		<div className="board">
@@ -8,4 +10,8 @@ export const FieldLayout = ({ field, onCellClick }) => {
 			))}
 		</div>
 	);
+};
+FieldLayout.propTypes = {
+	field: PropTypes.array,
+	onCellClick: PropTypes.func,
 };

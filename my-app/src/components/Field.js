@@ -1,4 +1,5 @@
 import { FieldLayout } from './FieldLayout';
+import PropTypes from 'prop-types';
 
 export const Field = ({
 	field,
@@ -8,7 +9,7 @@ export const Field = ({
 	setIsGameEnded,
 	setIsDraw,
 }) => {
-	const winning = (sq) => {
+	const winning = (sq) => { // проверяет выйгрышную комбинацию
 		const lines = [
 			[0, 1, 2],
 			[3, 4, 5],
@@ -19,13 +20,13 @@ export const Field = ({
 			[0, 4, 8],
 			[2, 4, 6],
 		];
-		for (let line of lines) {
+		for (let line of lines) { // проходим по массиву lines
 			const [a, b, c] = line;
-			if (sq[a] && sq[a] === sq[b] && sq[a] === sq[c]) {
-				return sq[a];
+			if (sq[a] && sq[a] === sq[b] && sq[a] === sq[c]) { // если ячейка анята и совпадает с выйгрышной комбинацией 
+				return sq[a]; // выйгрышный символ
 			}
 		}
-		return null;
+		return null; // иначе возвращаем пусто
 	};
 
 	const click = (index) => {
@@ -48,4 +49,13 @@ export const Field = ({
 	};
 
 	return <FieldLayout field={field} onCellClick={click} />;
+};
+Field.propTypes = {
+	field: PropTypes.array,
+	onCellClick: PropTypes.func,
+	setField: PropTypes.array,
+	currentPlayer:PropTypes.string,
+	setCurrentPlayer:PropTypes.string,
+	setIsGameEnded:PropTypes.bool,
+	setIsDraw:PropTypes.bool,
 };
